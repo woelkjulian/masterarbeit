@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:layout="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/profile_tab_layout"
+        style="@style/AppTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/profile_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:id="@+id/profile_bot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/profile_btnEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_btnEdit"
+            android:textSize="15dp"
+            android:textColor="@color/black_text"
+            android:background="@drawable/rounded_corners_button_white"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/profile_btnDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_btnDelete"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:background="@drawable/rounded_corners_button_red"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@id/profile_btnEdit"/>
+    </LinearLayout>
+</LinearLayout>

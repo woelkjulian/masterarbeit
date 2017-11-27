@@ -1,0 +1,33 @@
+{
+    "version": "version number in format x.x.x",
+    "creator": "Name of the tool, responsible for the creation of this file",
+    "format": "cpd-cft",
+    "projectName": "Name of the prototype project",
+    "persona": "Name of the Persona with a specific scenario",
+    "testerNames": ["Array with names of the testers"],
+    "voiceCharacter": "Name of the Phrase Render Tool Voice Character",
+    "languageCode": "Language code of the spoken responses",
+    "speechArtefacts": {
+        "artefactKey1": ["artefact text"],
+        "artefactKey2": {
+            "namespace1": {
+                "namespace": ["artefact text"]
+            }
+        }
+    },
+    "scenarios": [{
+        "name": "scenarioName",
+        "description": "Scenario Info",
+        "definitionOfDone": "Tasks to complete scenario",
+        "intents": [{
+            "name": "intentName",
+            "priority": { "enum": "<integer>" },
+            "utterances": ["array of utterances that trigger this intent"],
+            "responses": [{
+                "subject": "subjectName",
+                "slots": ["slotName1", "slotName2"],
+                "phrase": "spoken text <key:namespace:probability>"
+            }]
+        }]
+    }]
+}

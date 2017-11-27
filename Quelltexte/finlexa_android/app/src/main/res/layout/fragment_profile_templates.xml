@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <RelativeLayout
+        android:id="@+id/profile_templates_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentTop="true"
+            android:weightSum="1.0">
+
+            <Button
+                android:id="@+id/profile_templates_btnAddTemplate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corners_button_white"
+                android:textColor="@color/black_text"
+                android:text="Add Template"
+                android:textSize="15dp"
+                android:layout_weight="0.7"/>
+
+            <EditText
+                android:id="@+id/profile_templates_search"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black_text"
+                android:layout_weight="0.7"
+                android:visibility="gone"/>
+
+            <ImageButton
+                android:id="@+id/profile_templates_btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_corners_button_white"
+                android:src="@mipmap/ic_search_black_24dp"
+                android:textColor="@color/black_text"
+                android:layout_weight="0.3"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_templates_top"
+        android:layout_marginTop="10dp">
+
+        <!--RecyclerView with transaction template list-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/profile_templates_templateList"
+            android:scrollbars="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </android.support.v7.widget.RecyclerView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

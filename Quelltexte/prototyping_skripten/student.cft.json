@@ -1,0 +1,602 @@
+{
+    "version": "1.0.0",
+    "creator": "cui-cft",
+    "format": "cpd-cft",
+    "projectName": "Banking Skill Prototype",
+    "persona": "student",
+    "testerNames": ["Nathalie Papenfuss", "Isabella Thürauf", "Tobias Weber", "Felix Gruber", "Martin Bauer"],
+    "voiceCharacter": "Petra",
+    "languageCode": "de",
+    "speechArtefacts": {
+        "joke": {
+            "salary": ["wurde von der G-E-Z eingezogen! - nein, Quatsch! Es", "wurde gerade an mich überwiesen! - ä, Scherz, natürlich nicht! Es"],
+            "balance": ["eine Million Euro! Schön wärs, nicht wahr? Es sind", "wow, Respekt!"],
+            "transaction": ["Da wird sich aber jemand freuen!", "Ich hoffe du hast so viel Geld!"]
+        }
+    },
+    "scenarios": [{
+            "name": "AccountInfoScenario",
+            "description": "Check incomes,Check Balance",
+            "definitionOfDone": "",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "Du kannst beispielsweise nach deinem Gehalts - Eingang, oder deinem Kontostand fragen. Was möchtest du tun, <TESTER_NAME:15>?"
+                    }]
+                },
+                {
+                    "name": "errorIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> das habe ich leider nicht verstanden."
+                    }]
+                },
+                {
+                    "name": "salaryIntent",
+                    "utterances": ["Gehalt/Lohn da?", "Gehalt/Lohn angekommen?", "Gehalt/Lohn eingetroffen?", "Gehalt/Lohn überwiesen?", "Gehalt/Lohn hier?", "Wie ist Gehalt/Lohn?", "Wie hoch Gehalt/Lohn?", "Wie viel verdiene ich?"],
+                    "priority": { "main": 0 },
+                    "responses": [{
+                            "subject": "SalaryArrived",
+                            "phrase": "<TESTER_NAME:15> Dein Gehalt für diesen Monat <joke:15> ist bereits eingegangen"
+                        },
+                        {
+                            "subject": "salaryAmount",
+                            "phrase": "<TESTER_NAME:15> Dein Gehalt beträgt 850 Euro."
+                        },
+                        {
+                            "subject": "salaryDate",
+                            "phrase": "Dein Gehalt ist am ersten des Monats eingegangen."
+                        }
+                    ]
+                },
+                {
+                    "name": "balanceIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "main": 1 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2042,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "main": 1 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 2012 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 512 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 338 Euro."
+                        }
+                    ]
+                },
+                {
+                    "name": "transactionInfoIntent",
+                    "utterances": ["Ist {name} rausgegangen?", "Wurde {name} abgebucht", "Wurde {intended use} abgebucht?", "Wurde {intendedUse} von {name} abgebucht?", "Wurden {amount} abgebucht?"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                            "subject": "GetNameOrIntendedUse",
+                            "phrase": "Kontoinhaber oder Verwendungszweck der Transaktion?"
+                        },
+                        {
+                            "subject": "Miete",
+                            "phrase": "258 Euro für die Miete wurden bereits abgebucht."
+                        },
+                        {
+                            "subject": "Urlaub",
+                            "phrase": "Für Urlaub wurden bereits 50 Euro abgebucht."
+                        },
+                        {
+                            "subject": "Handy",
+                            "phrase": "Die Handy Rechnung über 20 Euro wird am 15. abgebucht."
+                        },
+                        {
+                            "subject": "DSL",
+                            "phrase": "10 Euro für DSL werden erst am 15. abgebucht."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "KitchenTableScenario",
+            "description": "Transfer 34 Euro to Alex",
+            "definitionOfDone": "",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "<TESTER_NAME:15> Du kannst Überweisungen durchführen, oder dich nach deinem Kontostand erkundigen."
+                    }]
+                },
+                {
+                    "name": "errorIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> Ich habe dich leider nicht verstanden."
+                    }]
+                },
+                {
+                    "name": "balanceBeforeIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2042,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetBeforeIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 2012 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 512 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 338 Euro."
+                        }
+                    ]
+                },
+                {
+                    "name": "transactionIntent",
+                    "utterances": ["Transferiere {Name} {Amount} EUR", "Überweise {Name} {Amount} EUR", "Überweise {Amount} EUR", "Überweise {Name}, Tätige Überweisung", "Mache Überweisung"],
+                    "priority": { "main": 0 },
+                    "responses": [{
+                            "subject": "GetNameAndAmount",
+                            "slots": ["Name", "Betrag"],
+                            "phrase": "<TESTER_NAME:15>An wen, möchtest du wieviel überweisen?"
+                        },
+                        {
+                            "subject": "GetAmount",
+                            "slots": ["Betrag"],
+                            "phrase": "Wie viel möchtest du überweisen?"
+                        },
+                        {
+                            "subject": "GetName",
+                            "slots": ["Name"],
+                            "phrase": "<TESTER_NAME:15> An wen möchtest du überweisen?"
+                        },
+                        {
+                            "subject": "Confirm",
+                            "phrase": "34 Euro an Alex, richtig?"
+                        },
+                        {
+                            "subject": "Success",
+                            "phrase": "Ok <TESTER_NAME:15> die Überweisung wurde durchgeführt! <joke:15>"
+                        },
+                        {
+                            "subject": "Fail",
+                            "phrase": "Sorry <TESTER_NAME:15>Beim Durchführen der Überweisung ist ein Fehler aufgetreten"
+                        }
+                    ]
+                },
+                {
+                    "name": "balanceAfterIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 1 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2008,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetAfterIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 1 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 1978,73 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 512 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 338 Euro."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "VacationScenario",
+            "description": "Check savings goal",
+            "definitionOfDone": "",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "Du kannst deine Geld Anlagen prüfen, neue anlegen, oder dich nach deinem Kontostand erkundigen. Was möchtest du tun?"
+                    }]
+                },
+                {
+                    "name": "errorIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> ich habe dich leider nicht verstanden."
+                    }]
+                },
+                {
+                    "name": "balanceIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2008,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 1978,73 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 512 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 338 Euro."
+                        }
+                    ]
+                },
+                {
+                    "name": "goalIntent",
+                    "utterances": ["Wie ist Status von Ziel", "Wie ist Status von {name}", "Wie viel hat Ziel {name}", "Was habe bereits für {name} gespart", "Wie hoch ist Endbetrag?", "Was habe ich Ende des Jahres"],
+                    "priority": { "main": 0 },
+                    "responses": [{
+                            "subject": "GetName",
+                            "phrase": "Für welches Ziel?"
+                        },
+                        {
+                            "subject": "CurrentAmount",
+                            "phrase": "Du hast bereits 450 Euro für dein Ziel gespart!"
+                        },
+                        {
+                            "subject": "FinalAmount",
+                            "phrase": "Bei gleichbleibenden Maßnahmen beträgt die Endsumme 600 Euro!"
+                        },
+                        {
+                            "subject": "MonthlyPayment",
+                            "phrase": "Deine aktuelle Rate liegt bei 50 Euro."
+                        },
+                        {
+                            "subject": "NoFinalLimitSpecified",
+                            "phrase": "<TESTER_NAME:15> Du hast keine Zielsumme festgelegt. Der Auftrag läuft bis August."
+                        },
+                        {
+                            "subject": "WrongGoalName",
+                            "phrase": "Tut mir Leid, ich kann kein Sparziel mit diesem Namen finden."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "LaptopScenario",
+            "description": "Check if you have 70 Euro in Budget,Create goal Auto",
+            "definitionOfDone": "",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "Du kannst beispielsweise Geld anlegen, oder prüfen, wie viel Geld du abzüglich der Fixkosten, monatlich zur Verfügung hast."
+                    }]
+                },
+                {
+                    "name": "errorIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> Ich habe dich leider nicht verstanden."
+                    }]
+                },
+                {
+                    "name": "balanceIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2008,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetBeforeIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 1978,73 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 512 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 338 Euro."
+                        }
+                    ]
+                },
+                {
+                    "name": "goalIntent",
+                    "utterances": ["Lege Ziel {name} an", "Lege Sparziel {name} mit {interval} {amount} zum {startDate} an", "Sparziel anlegen", "Überweise {amount} {interval}"],
+                    "priority": { "main": 0 },
+                    "responses": [{
+                            "subject": "GetAmountAndInterval",
+                            "slots": ["Betrag", "Intervall"],
+                            "phrase": "Zahlungsintervall, und Höhe des Betrages?"
+                        },
+                        {
+                            "subject": "GetName",
+                            "slots": ["Name"],
+                            "phrase": "<TESTER_NAME:15> Wie soll das Ziel heißen?"
+                        },
+                        {
+                            "subject": "GetInterval",
+                            "slots": ["Intervall"],
+                            "phrase": "<TESTER_NAME:15> In welchen Abständen möchtest du Geld zurücklegen"
+                        },
+                        {
+                            "subject": "Start",
+                            "slots": ["StartDatum"],
+                            "phrase": "<TESTER_NAME:15> Ab wann möchtest du den Auftrag starten?"
+                        },
+                        {
+                            "subject": "End",
+                            "slots": ["EndDatum"],
+                            "phrase": "<TESTER_NAME:15> Bis wann soll der Auftrag laufen?"
+                        },
+                        {
+                            "subject": "GetAmount",
+                            "slots": ["Betrag"],
+                            "phrase": "Wie viel möchtest du transferieren?"
+                        },
+                        {
+                            "subject": "Confirm",
+                            "phrase": "Sparziel Laptop, mit monatlich 70€, ab dem 01. im nächsten Monat anlegen, richtig?"
+                        },
+                        {
+                            "subject": "Success",
+                            "phrase": "Ok, der Auftrag wurde angelegt."
+                        },
+                        {
+                            "subject": "Fail",
+                            "phrase": "Sorry <TESTER_NAME:15> Beim Durchführen der Überweisung ist ein Fehler aufgetreten"
+                        }
+                    ]
+                },
+                {
+                    "name": "budgetAfterIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 1 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 1908,73 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 442 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 408 Euro."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "SellingCarScenario",
+            "description": "Check income for car",
+            "definitionOfDone": "",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "<TESTER_NAME:15> Du kannst Informationen zu Transaktionen über Kontoinhaber, oder den Verwendungszweck abfragen."
+                    }]
+                },
+                {
+                    "name": "errorIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> Ich habe dich leider nicht verstanden."
+                    }]
+                },
+                {
+                    "name": "balanceIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2008,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 1908 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 442 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 408 Euro."
+                        }
+                    ]
+                },
+                {
+                    "name": "transactionInfoIntent",
+                    "utterances": ["Ist Überweisung {name} eingegangen?", "Wieviel hat {name} überwiesen", "Wurde Zahlung {intended use} überwiesen?", "Überweisung {intendedUse} von {name} eingegangen?", "Ist Überweisung {amount} eingegangen?"],
+                    "priority": { "main": 0 },
+                    "responses": [{
+                            "subject": "GetNameOrUse",
+                            "slots": ["Name", "Verwendungszweck"],
+                            "phrase": "Kontoinhaber oder Verwendungszweck der Transaktion?"
+                        },
+                        {
+                            "subject": "InfoByName",
+                            "slots:": ["Name"],
+                            "phrase": "Christian Hofmann hat 1500 Euro für den Zweck, Auto überwiesen."
+                        },
+                        {
+                            "subject": "InfoByIntendedUse",
+                            "slots": ["Verwendungszweck"],
+                            "phrase": "Eine Überweisung von, Christian Hofmann,ist eingegangen. Sie beträgt 1500 Euro"
+                        },
+                        {
+                            "subject": "InfoByAmount",
+                            "slots": ["Betrag"],
+                            "phrase": "1500 Euro wurden gestern von Christian Hofmann mit dem Zweck - Auto - überwiesen."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "TransferIncomesScenario",
+            "description": "Check Balance,Transfer 1500 Euro to goal Laptop",
+            "definitionOfDone": "",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "Du kannst Überweisungen tätigen, oder prüfen, wie viel Geld du abzüglich der Fixkosten, monatlich zur Verfügung hast."
+                    }]
+                },
+                {
+                    "name": "errorIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> Ich habe dich leider nicht verstanden."
+                    }]
+                },
+                {
+                    "name": "balanceBeforeIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 2008,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetBeforeIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 0 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 1908 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 442 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 408 Euro."
+                        }
+                    ]
+                },
+                {
+                    "name": "goalIntent",
+                    "utterances": ["Überweise {amount} an Ziel {name}", "Überweise an Ziel {name}"],
+                    "priority": { "main": 0 },
+                    "responses": [{
+                            "subject": "GetNameAndAmount",
+                            "slots": ["Name", "Betrag"],
+                            "phrase": "<TESTER_NAME:15> An wen möchtest du wieviel überweisen?"
+                        },
+                        {
+                            "subject": "GetAmount",
+                            "slots": ["Betrag"],
+                            "phrase": "Wie viel möchtest du überweisen?"
+                        },
+                        {
+                            "subject": "GetName",
+                            "slots": ["Name"],
+                            "phrase": "<TESTER_NAME:15> An wen möchtest du überweisen ?"
+                        },
+                        {
+                            "subject": "WrongName",
+                            "phrase": "Tut mir Leid, ich kann kein Sparziel mit diesem Namen finden."
+                        },
+                        {
+                            "subject": "Confirm",
+                            "phrase": "1500 Euro auf dein Ziel Laptop einzahlen, richtig?"
+                        },
+                        {
+                            "subject": "Success",
+                            "phrase": "Ok <TESTER_NAME:15> Der Transfer wurde durchgeführt."
+                        },
+                        {
+                            "subject": "Fail",
+                            "phrase": "Sorry <TESTER_NAME:15> Beim Durchführen der Transaktion ist ein Fehler aufgetreten"
+                        }
+                    ]
+                },
+                {
+                    "name": "balanceAfterIntent",
+                    "utterances": ["Wie ist Kontostand?", "Wie viel auf Konto?", "Was auf Konto?", "Wie sieht Konto aus?", "Was macht Kontostand?"],
+                    "priority": { "aux": 1 },
+                    "responses": [{
+                        "subject": "Balance",
+                        "phrase": "<TESTER_NAME:15> Dein Kontostand beträgt <joke:15> 508,73 Euro"
+                    }]
+                },
+                {
+                    "name": "budgetAfterIntent",
+                    "utterances": ["Wie ist Budget für {month}", "Wie sieht Budget aus?", "Was bleibt von Gehalt übrig?", "Was bleibt mir"],
+                    "priority": { "aux": 1 },
+                    "responses": [{
+                            "subject": "Budget",
+                            "phrase": "Ende des Monats beträgt dein Kontostand vorraussichtlich 408 Euro."
+                        },
+                        {
+                            "subject": "MonthlyBudgetFromSalary",
+                            "phrase": "Dein monatliches Budget beträgt 408 Euro."
+                        },
+                        {
+                            "subject": "FixedCosts",
+                            "phrase": "<TESTER_NAME:15> deine monatlichen Fixkosten, belaufen sich auf 338 Euro."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

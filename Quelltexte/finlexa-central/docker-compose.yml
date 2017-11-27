@@ -1,0 +1,13 @@
+
+  postgres:
+    image: postgres:9.4
+    volumes:
+    - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+    - "5432:5432"
+    environment:
+    - DEBUG=true
+    - DB_USER="postgres"
+    - DB_PASS="postgres"
+    - DB_NAME="finlexa"
+  

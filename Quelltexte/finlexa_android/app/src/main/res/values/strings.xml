@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">Voice Bank</string>
+    <string name="app_description">...chat with your money</string>
+
+    <!--Strings for activity_main-->
+    <string name="login_welcome">Welcome to the Voice Bank app</string>
+    <string name="login_email">email adress</string>
+    <string name="login_password">password</string>
+    <string name="login_btnLogin">Login</string>
+    <string name="login_btnRegister">Register</string>
+
+    <!--Strings securestorage-->
+    <string name="ss_user_uuid">user_uuid</string>
+    <string name="ss_user_email">user_email</string>
+    <string name="ss_user_firstname">user_firstname</string>
+    <string name="ss_user_lastname">user_lastname</string>
+
+    <!--Strings for buttons-->
+    <string name="btn_save">Save</string>
+    <string name="btn_nest">Next</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!--Strings for fragment_authorise-->
+    <string name="authorise_headline">Authorise via Fingerprint</string>
+    <string name="authorise_text">Verify your identity to authorise action:</string>
+    <string name="authorise_btnDismiss">Dismiss</string>
+
+    <!--Strings for fragment profile-->
+    <string name="profile_title">User Profile</string>
+    <string name="profile_description">Manage your profile</string>
+    <string name="profile_btnDelete">Delete Profile</string>
+    <string name="profile_btnEdit">Edit Profile</string>
+
+    <!--Strings for firebase-->
+    <string name="firebaseTokenBroadcast_action">de.adorsys.finlexa_ACTION_FIREBASE_TOKEN</string>
+    <string name="firebaseTokenBroadcast_Extra_key">firebaseTokenReceiver</string>
+
+    <!--Strings for custom remote message keys sent by backend-->
+    <string name="remoteMessage_key_uuid">requestId</string>
+    <string name="remoteMessage_key_title">title</string>
+    <string name="remoteMessage_key_body">body</string>
+    <string name="remoteMessage_key_type">type</string>
+
+    <!--profile tabs-->
+    <string name="profile_template_tab">Templates</string>
+    <string name="profile_access_tab">Accesses</string>
+
+    <!--Strings for activity_register-->
+    <string name="register_title">Register</string>
+    <string name="register_description">Register yourself in order to receive push notifications</string>
+    <string name="register_email">Email</string>
+    <string name="register_firstname">First Name</string>
+    <string name="register_lastname">Last Name</string>
+    <string name="register_password">Password</string>
+    <string name="register_btnRegister">Register</string>
+    <string name="register_btnCancel">Cancel</string>
+
+
+    <!--Strings template activity-->
+    <string name="template_title_create">Create Template</string>
+    <string name="template_title_edit">Edit Template</string>
+    <string name="template_name">Template Name</string>
+    <string name="template_owner">Template Owner</string>
+    <string name="template_iban">Template IBAN</string>
+    <string name="template_bic">Template BIC</string>
+    <string name="template_bankname">Template Bank Name</string>
+    <string name="template_search_hint">Template Name, oder IBAN...</string>
+
+    <!--Strings access activity-->
+    <string name="access_main">Hauptkonto</string>
+    <string name="access_title_create">Create Access</string>
+    <string name="access_title_edit">Edit Access</string>
+    <string name="access_bankcode">Access Bank Code</string>
+    <string name="access_bankname">Access Bank Name</string>
+    <string name="access_banklogin">Access Login</string>
+    <string name="access_banklogin2">Access Login 2</string>
+    <string name="access_pin">Access Pin</string>
+    <string name="access_iban">Access IBAN</string>
+    <string name="access_type">Access Name</string>
+    <string name="access_search_hint">Access Name, oder IBAN...</string>
+</resources>

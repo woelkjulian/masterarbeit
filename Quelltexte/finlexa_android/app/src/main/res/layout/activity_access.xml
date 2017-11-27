@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/access_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/blue"/>
+
+        <TextView
+            android:id="@+id/access_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_text"
+            android:layout_below="@id/access_title"/>
+
+        <TextView
+            android:id="@+id/access_main_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:text="@string/access_main"
+            android:textColor="@color/black_text"
+            android:layout_below="@id/access_description"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/access_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/access_main_lbl"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:theme="@style/SCBSwitch" />
+
+        <EditText
+            android:id="@+id/access_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/access_main_lbl"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/access_bankcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/access_type"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/access_bankname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/access_bankcode"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/access_banklogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/access_bankname"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/access_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/access_banklogin"
+            android:layout_marginTop="15dp"
+            android:inputType="textPassword"/>
+
+        <EditText
+            android:id="@+id/access_iban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/access_pin"
+            android:layout_marginTop="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/access_iban"
+            android:layout_marginTop="15dp">
+
+            <Button
+                android:id="@+id/access_btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_button_blue"
+                android:text="@string/btn_save"
+                android:textSize="15dp"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/access_btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_button_white"
+                android:text="@string/btn_cancel"
+                android:textSize="15dp"
+                android:textColor="@color/black_text"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "518905512416",
+    "firebase_url": "https://finlexa-8062f.firebaseio.com",
+    "project_id": "finlexa-8062f",
+    "storage_bucket": "finlexa-8062f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518905512416:android:2e4b4b4ed81414fe",
+        "android_client_info": {
+          "package_name": "de.adorsys.finlexa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "518905512416-h0c2fjt53fna12qhamnfuio4vuokjee7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.adorsys.finlexa",
+            "certificate_hash": "c4dd525f02ca8e025e2ef4b983660472319c9b6b"
+          }
+        },
+        {
+          "client_id": "518905512416-vs88at4qjr3n7jo2unjpks4g931k5op3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBvESTzDGYRyXzU-lUeN11r2qfus1un9M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "518905512416-vs88at4qjr3n7jo2unjpks4g931k5op3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

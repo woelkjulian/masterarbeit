@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <TextView
+            android:id="@+id/profile_edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="@color/blue_light"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:id="@+id/profile_edit_description"
+            android:layout_below="@id/profile_edit_title"
+            android:text="Edit profile information"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_text"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
+            android:id="@+id/profile_edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black_text"
+            android:textAlignment="center"
+            android:hint="@string/register_email"
+            android:layout_below="@id/profile_edit_description"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/profile_edit_firstName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black_text"
+            android:textAlignment="center"
+            android:layout_below="@id/profile_edit_email"
+            android:layout_marginTop="15dp"
+            android:hint="@string/register_firstname"/>
+
+        <EditText
+            android:id="@+id/profile_edit_lastName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black_text"
+            android:textAlignment="center"
+            android:layout_below="@id/profile_edit_firstName"
+            android:layout_marginTop="15dp"
+            android:hint="@string/register_lastname"/>
+
+        <EditText
+            android:id="@+id/profile_edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textColor="@color/black_text"
+            android:textAlignment="center"
+            android:layout_below="@id/profile_edit_lastName"
+            android:layout_marginTop="15dp"
+            android:hint="@string/register_password"
+            android:inputType="textPassword"/>
+
+        <Button
+            android:id="@+id/profile_edit_btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_save"
+            android:textSize="15dp"
+            android:background="@drawable/rounded_corners_button_blue"
+            android:textColor="@color/white"
+            android:layout_below="@id/profile_edit_password"
+            android:layout_marginTop="20dp"/>
+
+        <Button
+            android:id="@+id/profile_edit_btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_cancel"
+            android:textSize="15dp"
+            android:background="@drawable/rounded_corners_button_white"
+            android:textColor="@color/black_text"
+            android:layout_below="@id/profile_edit_btnSave"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+</RelativeLayout>

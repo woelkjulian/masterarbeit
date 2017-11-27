@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/template_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:textColor="@color/blue"
+            android:layout_alignParentTop="true"/>
+
+        <TextView
+            android:id="@+id/template_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:textColor="@color/black_text"
+            android:layout_below="@id/template_title"/>
+
+        <EditText
+            android:id="@+id/template_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/template_description"
+            android:layout_marginTop="20dp"/>
+
+        <EditText
+            android:id="@+id/template_owner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/template_name"
+            android:layout_marginTop="15dp"/>
+        <EditText
+            android:id="@+id/template_iban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/template_owner"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/template_bic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/template_iban"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/template_bankName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textAlignment="center"
+            android:layout_below="@id/template_bic"
+            android:layout_marginTop="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/template_bankName"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/template_btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_button_blue"
+                android:text="@string/btn_save"
+                android:textSize="15dp"
+                android:textColor="@color/white" />
+
+            <Button
+                android:id="@+id/template_btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_button_white"
+                android:text="@string/btn_cancel"
+                android:textSize="15dp"
+                android:textColor="@color/black_text"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

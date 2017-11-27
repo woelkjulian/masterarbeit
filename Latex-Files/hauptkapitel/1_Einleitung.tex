@@ -1,0 +1,64 @@
+\chapter{Einleitung}
+\label{cha:einleitung}
+
+Wird bei bestimmten Begriffen, die sich auf Personengruppen beziehen, nur die männliche Form gewählt, so ist dies nicht geschlechtsspezifisch gemeint, sondern geschah ausschließlich aus Gründen der besseren Lesbarkeit.
+
+\section{Motivation}
+\label{sec:motivation}
+
+\textit{Technologien sind Ressourcen, zu denen ein Interface den Zugang verschafft} \cite{cui-future-interface}. Anders als das \textit{\ac{GUI}}, ermöglicht ein \textit{\ac{CUI}} diesen Zugang nicht nur durch grafische Unterstützung, sondern hauptsächlich über Sprach"~ \bzw Texteingaben. Ein weiterer entscheidender Aspekt, den es mit sich bringt, ist Intelligenz. Es ist nicht nur ein Kommandozeilen"~ Interface. Vielmehr werden diese Technologien mit dem Verständnis für den entsprechenden Nutzungskontext gekoppelt. Während also über ein \ac{GUI} die Antwort auf eine Frage gesucht werden muss, kann man einem \ac{CUI} die Frage schlichtweg stellen und erhält die entsprechende Antwort. 
+
+Es gibt verschiedene Ausprägungen von \acp{CUI}. Zum einen \textit{Chatbots}, welche primär mit eingegebenen Text interagieren. Zum anderen \textit{\acp{VUI}}, die über Spracheingaben bedient werden können. 
+
+Hierzu zählen auch Sprachassistenten wie \textit{Apple Siri}\footnote{https://www.apple.com/ios/siri/, Abgerufen 31.10.2017} und \textit{Samsung S- Voice}\footnote{http://www.samsung.com/global/galaxy/what-is/s-voice/, Abgerufen 31.10.2017}. Diese sind vor allem durch mobile Endgeräte bereits weit verbreitet. Sie erleichtern seit Jahren die Bedienung und die Ausführung diverser Aufgaben. Auch \textit{Amazon}\footnote{https://www.amazon.de, Abgerufen 31.10.2017} hat ein solches System entwickelt. Der \textit{\ac{AVS}} \cite{amazon-developer-alexa} wurde Ende 2014 in Verbindung mit der passenden Hardware, dem \textit{Amazon Echo} \cite{amazon-echo}, veröffentlicht. Dieser verbindet sich bei Spracheingabe über das Internet mit dem AVS. Gesprochenes wird verarbeitet und die Antwort über den Lautsprecher des Echo Gerätes wieder ausgegeben. Der Umfang des Sprachverständnisses ist durch Anwendungen, den sogenannten \textit{Skills}, definiert. Dabei ist es auch möglich eigene Skills zu implementieren, um den Funktionsumfang zu erweitern. 
+Ein Bereich, der für Sprachassistenten viele Anwendungsmöglichkeiten bietet, ist der Finanzsektor. Hier könnten eingesetzte \acp{CUI} viele Prozessabläufe für Banken und deren Kunden vereinfachen. Neben der Neueröffnung eines Kontos, der Durchführung eines Beratungsgespräches und dem Bestellen einer neuen Kredit"~ \bzw EC Karte, wäre auch eine sprachgesteuerte Verwaltung von Bankkonten denkbar.
+
+Trotz der Vorteile, die ein \ac{CUI} mit sich bringt, muss dennoch immer validiert werden ob diese Technologie überhaupt für den entsprechenden Anwendungsfall geeignet ist. Vor allem in Bezug auf die \textit{Usability} \cite{richter-ux-compact} und den sicherheitskritischen Aspekten. Bei der Entwicklung eines sprachgesteuerten Systems für den Banken-Bereich stellt sich also die Frage, welche Anforderungen es zufriedenstellend erfüllen kann?
+
+\section{Zielsetzung}
+\label{sec:ziel-der-arbeit}
+
+Die Zielsetzung der Masterarbeit besteht zum einen darin, ein Conversational User Interface für das Bankkonten-Management zu entwerfen. Zum anderen einen Teil dieses Entwurfs in Form eines funktionierenden Prototypen mit Alexa Voice Services umzusetzen. Mit Hilfe der entwickelten Software soll es Benutzern möglich sein, ihr Bankkonto über Spracheingaben in Verbindung mit einem Amazon Echo zu verwalten. Konkret sollen Funktionen wie das Abfragen des Kontostandes und das Durchführen von Überweisungen ermöglicht werden. Die Nutzer sparen dabei Zeit, da die Verwendung einer Online-Banking-Anwendung über eine grafische Schnittstelle \bzw der Weg zur Bank entfällt.
+
+\section{Projektträger}
+\label{sec:projekttraeger}
+
+Diese Masterarbeit wurde in Zusammenarbeit mit dem Unternehmen \adorsys \, durchgeführt. Um deren fachliche Kompetenzen und die Hintergründe, die zu dieser Arbeit geführt haben, besser einordnen zu können, wird das Unternehmen im Folgenden kurz vorgestellt.
+
+Die \adorsys \, ist ein, im Jahre 2006 in Nürnberg gegründetes, mittelständisches IT-Unternehmen. Es wird aktuell von dem Geschäftsgründer Francis Pouatcha Nouyeuwe und Stefan Hamm geleitet und beschäftigt derzeit 74 Mitarbeiter\footnote{Stand: 01. September 2017} an den Standorten Nürnberg und Frankfurt am Main. \\
+Fachlich hat sich die \adorsys \, auf individuelle Softwarelösungen für Kunden aus der Banken"~ und Versicherungsbranche spezialisiert. Mit dem Motto „Wir entwickeln Software für eine digitale Zukunft“ begleiten die eingesetzten Projektteams die Kunden von der ersten Idee bis hin zum fertigen Produkt. Dabei ist es unabhängig davon, ob ein bestehende Software modernisiert werden soll oder die Lösung zu einem neuen Geschäftsmodell fehlt. 
+
+Selbst beschreibt sich das Unternehmen wie folgt:
+\begin{quote}
+    „Die adorsys ist ein seit 2006 bestehendes innovatives IT-Unternehmen für zielgenaue, individuelle und exklusive IT-Lösungen. Wir decken eine Vielzahl fachlicher und technologischer Themen ab und bieten die komplette Projektrealisierung aus einer Hand. Von Projektmanagement, Businessanalyse und Anforderungsentwicklung, Softwarearchitektur und -entwicklung über Development Services bis zur Betriebsvorbereitung.“ \cite{adorsys}
+\end{quote}
+
+Das Unternehmen beschäftigt sich seit dem Aufkommen der neuen Generation von Sprachassistenten und Chatbots mit dem Thema Conversational User Interfaces. Im Rahmen von wissenschaftlichen Arbeiten werden derzeit Kompetenzen in diesem Bereich aufgebaut.
+
+In Abbildung \ref{fig:logo-adorsys} ist das aktuelle Firmenlogo der \adorsys \, dargestellt.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{bilder/logo.png}
+    \caption{Logo der \adorsys \, \cite{adorsys}}
+    \label{fig:logo-adorsys}
+\end{figure}
+
+\section{Aufbau der Arbeit}
+\label{sec:aufbau-der-arbeit}
+
+Um sich besser zurecht zu finden, soll zunächst ein Überblick über jedes Kapitel und dessen Inhalt gegeben werden. 
+
+\begin{enumerate}
+  \item Die \nameref{cha:einleitung} gibt einen groben Überblick zur Thematik, beschreibt die Ziele der Arbeit und stellt den Projektträger kurz vor.
+  
+  \item Im Kapitel \nameref{cha:hintergrund} werden die Begriffe \ac{CUI}, Amazon Alexa und \textit{Bankkonten-Management} näher betrachtet. Dabei werden die für die Arbeit notwendigen Begrifflichkeiten, grundlegende Funktionsweisen und Bedeutungen aus diesen Bereichen erklärt.
+  
+  \item Im Kapitel \nameref{cha:konzeption} werden die Anforderungen an das System und das Konzept des Prototypen erarbeitet. Dies wird \ua durch das Sammeln empirischer Daten und der Anwendung von Methoden aus dem Usability Engineering erreicht. 
+  
+  \item Das Kapitel \nameref{cha:umsetzung} beschreibt die Implementierung des Prototypen unter Berücksichtigung der Vorarbeiten aus Kapitel \ref{cha:konzeption}. Neben der eigentlichen Implementierung, ist auch die Integration beschrieben.
+  
+  \item In der \nameref{cha:schlussbetrachtung} werden die Ergebnisse der Arbeit zusammengefasst und ein Ausblick gegeben.
+  
+  \item Im \nameref{sec:Anhang} sind vor allem die Ausarbeitungen aus Kapitel \ref{cha:konzeption} in vollständiger Form gegeben. Zusätzlich ist die Struktur der beiliegenden CD beschrieben.
+\end{enumerate}

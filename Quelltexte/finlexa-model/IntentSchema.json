@@ -1,0 +1,53 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "Balance"
+    },
+    {
+      "slots": [
+        {
+          "name": "Number",
+          "type": "AMAZON.NUMBER"
+        },
+        {
+          "name": "TemplateName",
+          "type": "LIST_OF_NAMES"
+        }
+      ],
+      "intent": "Transaction"
+    },
+    {
+      "slots": [
+        {
+          "name": "Name",
+          "type": "LIST_OF_NAMES"
+        }
+      ],
+      "intent": "NameIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Number",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent": "NumberIntent"
+    }
+  ]
+}

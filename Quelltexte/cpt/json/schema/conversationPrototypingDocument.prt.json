@@ -1,0 +1,35 @@
+{
+    "version": "version number in format x.x.x",
+    "creator": "Name of the tool, responsible for the creation of this file",
+    "format": "cpd-prt",
+    "projectName": "Name of the prototype project",
+    "persona": "Name of the Persona with a specific scenario",
+    "testerNames": ["Name of the testers"],
+    "testDirectory": "Path of the test folder for this specific testerName",
+    "voiceCharacter": "Name of the Phrase Render Tool Voice Character",
+    "languageCode": "Language code of the spoken responses",
+    "speechArtefacts": {
+        "artefactKey1": ["artefact text"],
+        "artefactKey2": {
+            "namespace1": {
+                "namespace": ["artefact text"]
+            }
+        }
+    },
+    "scenarios": [{
+        "name": "scenarioName",
+        "description": "<html> Info for every scenarioTab to provide SimulationOperator a mouseover Info Field with this text</html>",
+        "definitionOfDone": "Info text or tasks, the user has to trigger/use to consider this scenario as done",
+        "intents": [{
+            "name": "intentName",
+            "priority": { "enum": "<integer>" },
+            "utterances": ["array of utterances that trigger this intent"],
+            "responses": [{
+                "subject": "subjectName",
+                "slots": ["slotName1", "slotName2"],
+                "phrase": "spoken phrase text",
+                "audio": "name of the audio file with the spoken text as: {scenarioName}_{intentName}_{subjectName}.aiff"
+            }]
+        }]
+    }]
+}

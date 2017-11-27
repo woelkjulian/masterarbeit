@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": false,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "outDir": "build",
+        "sourceMap": true,
+        "target": "es6",
+        "watch": false,
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "**/*.spec.ts",
+        "node_modules"
+    ]
+}

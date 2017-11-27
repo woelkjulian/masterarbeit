@@ -1,0 +1,160 @@
+{
+    "version": "1.0.0",
+    "creator": "cui-cft",
+    "format": "cpd-cft",
+    "projectName": "Banking Skill Prototype",
+    "persona": "Robert Trier",
+    "testerNames": ["Max Mustermann"],
+    "testDirectory": "CUI_PRT/Banking_Skill_Prototype/Robert_Trier/Max/",
+    "voiceCharacter": "petra",
+    "languageCode": "de",
+    "speechArtefacts": {
+        "joke": {
+            "budget": {
+                "low": ["Viel hast du ja nicht auf dem Konto"],
+                "high": ["Respekt", "hast wohl ne Bank ausgeraubt hä?"]
+            }
+        }
+    },
+    "scenarios": [{
+            "name": "accountInfoScenario",
+            "description": "<html><h1>AcocuntInfo Scenario</h1><h2>Task:</h2><p>Task description blablabla</p> </html>",
+            "definitionOfDone": "test user achieved to ask for her balance",
+            "intents": [{
+                    "name": "salaryIntent",
+                    "priority": { "main": 0 },
+                    "utterances": ["Ist mein Gehalt schon da?", "Ist mein Gehalt angekommen?"],
+                    "responses": [{
+                            "subject": "yes",
+                            "phrase": "Dein Gehalt für diesen Monat <joke:100> ist bereits eingegangen",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "no",
+                            "phrase": "Dein Gehalt für diesen Monat ist noch nicht eingegangen",
+                            "audio": "jongly.aif"
+                        }
+                    ]
+                },
+                {
+                    "name": "balanceIntent",
+                    "priority": { "aux": 1 },
+                    "utterances": ["Wie ist mein Kontostand?", "Wie viel habe ich auf dem Konto?"],
+                    "responses": [{
+                        "subject": "1500",
+                        "phrase": "<TESTER_NAME:50>, dein Kontostand beträgt <joke:100> 1500 EUR",
+                        "audio": "jongly.aif"
+                    }]
+                }
+            ]
+        },
+        {
+            "name": "transactionScenario",
+            "description": "<html><h1>Transaction Scenario</h1><h2>Task:</h2><p>Task description blablabla</p> </html>",
+            "definitionOfDone": "test user achieved to transact money",
+            "intents": [{
+                    "name": "helpIntent",
+                    "utterances": ["Hilfe", "Hilf mir", "Was kann ich fragen", "Ich bin verwirrt", "Ich weiß nicht weiter"],
+                    "responses": [{
+                        "subject": "Help",
+                        "phrase": "Du kannst beispielsweise nach deinem Gehalts - Eingang, oder deinem Kontostand fragen. Was möchtest du tun, <TESTER_NAME:15>?",
+                        "audio": "jongly.aif"
+                    }]
+                },
+                {
+                    "name": "errorUnderstandingIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> das habe ich leider nicht verstanden.",
+                        "audio": "jongly.aif"
+                    }]
+                },
+                {
+                    "name": "errorMissingIntent",
+                    "utterances": [""],
+                    "responses": [{
+                        "subject": "Error",
+                        "phrase": "Entschuldige <TESTER_NAME:15> das muss ich erst noch lernen.",
+                        "audio": "jongly.aif"
+                    }]
+                },
+                {
+                    "name": "transactionIntent",
+                    "priority": { "main": 0 },
+                    "utterances": ["Transferiere {Name} {Amount} EUR", "Überweise {Name} {Amount} EUR", "Überweise {Amount} EUR", "Überweise {Name}"],
+                    "responses": [{
+                            "subject": "success",
+                            "phrase": "50 EUR wurden Markus überwiesen",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "fail",
+                            "phrase": "Sorry <TESTER_NAME:50>, ich kann die Überweisung leider nicht zuordnen",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getName",
+                            "slots": ["Name"],
+                            "phrase": "An wen möchtest du überweisen?",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getAmount",
+                            "slots": ["Betrag"],
+                            "phrase": "Wie viel möchtest du überweisen?",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getAmountAndName",
+                            "slots": ["Betrag", "Name"],
+                            "phrase": "Wie viel möchtest du an wen überweisen?",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getNameAndAmount",
+                            "slots": ["Name", "Betrag"],
+                            "phrase": "An wen möchtest du wieviel überweisen?",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "bla",
+                            "phrase": "Wie viel möchtest du überweisen?",
+                            "audio": "jongly.aif"
+                        }
+                    ]
+                },
+                {
+                    "name": "bankingOrderIntent",
+                    "priority": { "main": 2 },
+                    "utterances": ["Ich möchte einen Dauerauftrag einrichten", "Erstelle einen {interval} Dauerauftrag in Höhe von {amount} auf {name}"],
+                    "responses": [{
+                            "subject": "success",
+
+                            "phrase": "Der Dauerauftrag wurde eingerichtet",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getName",
+                            "slots": ["Name"],
+                            "phrase": "An wen möchtest du überweisen?",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getInterval",
+                            "slots": ["Intervall"],
+                            "phrase": "In welchem Interval möchtest du den Auftrag ausführen?",
+                            "audio": "jongly.aif"
+                        },
+                        {
+                            "subject": "getAmount",
+                            "slots": ["Betrag"],
+                            "phrase": "<TESTER_NAME:80>, Welche Höhe soll der Auftrag haben?",
+                            "audio": "jongly.aif"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

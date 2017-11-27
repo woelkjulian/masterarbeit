@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_template_view"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    card_view:cardElevation="2dp"
+    card_view:cardCornerRadius="4dp">
+
+    <FrameLayout
+        android:id="@+id/access_border"
+        android:layout_width="8dp"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/card_access_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Access Type"
+            android:textSize="15dp"
+            android:textColor="@color/blue"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:id="@+id/card_access_bankcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bank Code"
+            android:layout_marginTop="5dp"
+            android:textSize="10dp"
+            android:layout_below="@id/card_access_type"/>
+
+        <TextView
+            android:id="@+id/card_access_iban"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Iban"
+            android:textColor="@color/black_text"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:textStyle="italic"
+            android:layout_below="@id/card_access_bankcode"/>
+
+
+        <LinearLayout
+            android:layout_alignBaseline="@id/access_bankcode"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/card_access_btnEdit"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/ic_mode_edit_black_24dp"
+                android:background="@drawable/rounded_corners_button_white"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp" />
+
+            <ImageButton
+                android:id="@+id/card_access_btnDelete"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/ic_delete_black_24dp"
+                android:background="@drawable/rounded_corners_button_white"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="5dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,37 @@
+Balance wie ist mein kontostand
+Balance wie sieht mein konto aus
+Balance wie viel habe ich auf dem konto
+Balance Wie ist mein Kontostand
+Balance Wie viel hab ich auf dem Konto
+Balance Wie hoch ist mein Kontostand
+Balance Was ist mein Kontostand
+Balance Wie sieht mein Kontostand aus
+Balance Was genau hab ich auf dem Konto
+Balance Gib mir den Kontostand
+Balance Sag mir den Kontostand
+Balance Sag mir den aktuellen Kontostand
+Balance Sag mir wie hoch der Kontostand ist
+Transaction überweise {Number} euro an {TemplateName}
+Transaction {Number} euro an {TemplateName}
+Transaction überweise {Number} euro
+Transaction überweisung an {TemplateName}
+Transaction ich möchte überweisen
+Transaction {Number} Euro an {TemplateName}
+Transaction Ich möchte eine Überweisung tätigen
+Transaction Ich möchte etwas überweisen
+Transaction Überweise etwas
+Transaction Überweisung
+Transaction Ich möchte eine Überweisung durchführen
+Transaction Ich möchte eine Transaktion durchführen
+Transaction Transaktion
+Transaction Transferiere etwas
+Transaction Transferiere {Number} Euro an {TemplateName}
+Transaction Transferiere {Number} Euro
+Transaction Transferiere an {TemplateName}
+Transaction Schieb {Number} Euro auf das Konto von {TemplateName}
+Transaction Schieb {TemplateName} {Number} Euro rüber
+Transaction Ich möchte {Number} Euro an {TemplateName} überweisen
+Transaction Ich möchte {Number} Euro an {TemplateName} transferieren
+NameIntent {Name}
+NumberIntent {Number}
+NumberIntent {Number} Euro

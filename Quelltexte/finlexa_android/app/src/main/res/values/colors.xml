@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#054f72</color>
+    <color name="colorPrimaryDark">#054f72</color>
+    <color name="colorAccent">#fda58c</color>
+    <color name="blue">#054f72</color>
+    <color name="blue_opac_50">#80054f72</color>
+    <color name="blue_light">#0984bf</color>
+    <color name="blue_light_opac_50">#800984bf</color>
+    <color name="blue_extralight">#009bd2</color>
+    <color name="blue_extralight_opac_50">#80009bd2</color>
+    <color name="mint">#70bcbc</color>
+    <color name="green">#74b245</color>
+    <color name="black_text">#484848</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#373737</color>
+    <color name="yellow">#eed525</color>
+    <color name="red">#ee0000</color>
+    <color name="red_opac_50">#80ee0000</color>
+</resources>

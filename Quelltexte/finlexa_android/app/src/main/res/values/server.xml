@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Strings for booking server-->
+    <string name="booking_protocol">https://</string>
+    <string name="booking_host">alexabooking.dev.adorsys.de</string>
+    <string name="firebaseToken_key">fbToken</string>
+
+
+</resources>
